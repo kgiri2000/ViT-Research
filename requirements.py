@@ -1,0 +1,4 @@
+timm
+torchvision
+torch
+tqdm
