@@ -1,2 +1,5 @@
 data
 .venv
+collections
+cache
+.env
