@@ -43,7 +43,7 @@ from models.vit import load_vit
 device = torch.device("cuda" if  torch.cuda.is_available() else "cpu")
 print(f"Using {device}")
 
-def fine_tune(data_dir, image_size, split,num_classes, model_name, model_path, batch_size, lr, epoch):
+def fine_tune(data_dir, image_size, split,num_classes, model_name, model_path, batch_size, lr, epochs):
     train_ds, test_ds = load_dataset(data_dir, image_size, split)
     train_loader = DataLoader(train_ds,
                               batch_size=batch_size,
@@ -58,7 +58,7 @@ def fine_tune(data_dir, image_size, split,num_classes, model_name, model_path, b
     criterion = nn.CrossEntropyLoss()
 
     #Training loop
-    for epoch in range(epoch):
+    for epoch in range(epochs):
         model.train()
         total_loss, correct, total = 0,0,0
         
@@ -74,8 +74,27 @@ def fine_tune(data_dir, image_size, split,num_classes, model_name, model_path, b
             _, pred = out.max(1)
             correct += pred.eq(y).sum().item()
             total += y.size(0)
+        train_acc = 100* correct/total
+        train_loss = total_loss/ len(train_loader)
 
-        print(f"[Epoch {epoch+1}] Loss = {total_loss/len(train_loader):.4f}, Acc = {100* correct/total: .2f}%")
+        #Evaluate on test set
+        model.eval()
+        test_correct, test_total = 0,0
+        with torch.no_grad():
+            for x, y in test_loader:
+                x, y = x.to(device), y.to(device)
+                out = model(x)
+                _, pred = out.max(1)
+                test_correct += pred.eq(y).sum().item()
+                test_total += y.size(0)
+        test_acc= 100* test_correct/test_total
+        
+
+        print(f"[Epoch {epoch+1}/{epochs}]"
+                f" Train Loss = {train_loss:.4f}"
+                f" Test Acc = {train_acc:.2f}%"
+                f" Test Acc = {test_acc:.2f}%"
+                )
     #Save model
     save_dir = os.path.join(model_path, model_name)
     os.makedirs(save_dir, exist_ok=True)

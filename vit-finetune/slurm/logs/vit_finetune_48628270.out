@@ -1,0 +1,39 @@
+Using Python: /home/kgiri/.conda/envs/vit/bin/python
+CUDA Devices: 0
+Using cuda
+Dataset path: datasets/collections/ucmerced
+Total: 2100
+Train Data: 630
+Test Data: 1470
+Using cached model from models/collections/vit_b_16/vit_b_16.pth
+[Epoch 1/30] Train Loss = 2.5999 Test Acc = 29.84% Test Acc = 60.20%
+[Epoch 2/30] Train Loss = 1.4855 Test Acc = 86.51% Test Acc = 82.45%
+[Epoch 3/30] Train Loss = 0.8349 Test Acc = 93.97% Test Acc = 90.14%
+[Epoch 4/30] Train Loss = 0.4378 Test Acc = 97.46% Test Acc = 92.52%
+[Epoch 5/30] Train Loss = 0.2461 Test Acc = 99.52% Test Acc = 93.95%
+[Epoch 6/30] Train Loss = 0.1364 Test Acc = 100.00% Test Acc = 94.63%
+[Epoch 7/30] Train Loss = 0.0849 Test Acc = 100.00% Test Acc = 95.51%
+[Epoch 8/30] Train Loss = 0.0583 Test Acc = 100.00% Test Acc = 95.31%
+[Epoch 9/30] Train Loss = 0.0423 Test Acc = 100.00% Test Acc = 95.37%
+[Epoch 10/30] Train Loss = 0.0332 Test Acc = 100.00% Test Acc = 95.65%
+[Epoch 11/30] Train Loss = 0.0271 Test Acc = 100.00% Test Acc = 95.78%
+[Epoch 12/30] Train Loss = 0.0233 Test Acc = 100.00% Test Acc = 95.85%
+[Epoch 13/30] Train Loss = 0.0205 Test Acc = 100.00% Test Acc = 95.71%
+[Epoch 14/30] Train Loss = 0.0180 Test Acc = 100.00% Test Acc = 95.65%
+[Epoch 15/30] Train Loss = 0.0163 Test Acc = 100.00% Test Acc = 95.78%
+[Epoch 16/30] Train Loss = 0.0149 Test Acc = 100.00% Test Acc = 95.92%
+[Epoch 17/30] Train Loss = 0.0137 Test Acc = 100.00% Test Acc = 95.85%
+[Epoch 18/30] Train Loss = 0.0127 Test Acc = 100.00% Test Acc = 95.71%
+[Epoch 19/30] Train Loss = 0.0117 Test Acc = 100.00% Test Acc = 95.78%
+[Epoch 20/30] Train Loss = 0.0109 Test Acc = 100.00% Test Acc = 95.71%
+[Epoch 21/30] Train Loss = 0.0100 Test Acc = 100.00% Test Acc = 95.92%
+[Epoch 22/30] Train Loss = 0.0094 Test Acc = 100.00% Test Acc = 95.78%
+[Epoch 23/30] Train Loss = 0.0088 Test Acc = 100.00% Test Acc = 95.85%
+[Epoch 24/30] Train Loss = 0.0085 Test Acc = 100.00% Test Acc = 95.85%
+[Epoch 25/30] Train Loss = 0.0079 Test Acc = 100.00% Test Acc = 95.85%
+[Epoch 26/30] Train Loss = 0.0075 Test Acc = 100.00% Test Acc = 95.85%
+[Epoch 27/30] Train Loss = 0.0071 Test Acc = 100.00% Test Acc = 95.71%
+[Epoch 28/30] Train Loss = 0.0068 Test Acc = 100.00% Test Acc = 95.71%
+[Epoch 29/30] Train Loss = 0.0065 Test Acc = 100.00% Test Acc = 95.78%
+[Epoch 30/30] Train Loss = 0.0062 Test Acc = 100.00% Test Acc = 95.65%
+Fine tuned model saved in models/collections/vit_b_16/vit_b_16_finetuned.pth

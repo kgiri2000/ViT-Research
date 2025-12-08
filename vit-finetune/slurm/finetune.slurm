@@ -14,6 +14,7 @@
 
 
 #Load Python / Conda
+#module load miniconda3/24.3.0
 conda activate vit                 # conda environment name
 
 echo "Using Python: $(which python)"
@@ -21,16 +22,16 @@ echo "CUDA Devices: $CUDA_VISIBLE_DEVICES"
 
 
 #Project folder
-cd /project/vitftune/kgiri/VIT-RESEARCH/vit-finetune
+cd /project/vitftune/kgiri/ViT-Research/vit-finetune
 
 # Training
 python train.py \
-    --path datasets/ucmerced \
+    --path datasets/collections/ucmerced \
     --image_size 224 \
     --num_classes 21 \
-    --split 0.7 \
+    --split 0.3 \
     --model_name vit_b_16 \
     --model_path models/collections \
-    --batch_size 64 \
-    --lr 0.0003 \
-    --epochs 20
+    --batch_size 100 \
+    --lr 0.00003 \
+    --epochs 30
